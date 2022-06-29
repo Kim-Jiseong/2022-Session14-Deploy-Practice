@@ -1,0 +1,16 @@
+# Created by https://www.toptal.com/developers/gitignore/api/django,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,visualstudiocode
+source/
+Session15-JavaScript(ES6).pptx
+db.sqlite3
+.static_root/
+### Django ###
+migrations/
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media

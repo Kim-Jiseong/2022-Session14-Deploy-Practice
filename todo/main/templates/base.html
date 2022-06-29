@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Todo List" />
+    <meta property="og:description" content="실습용 TodoList입니다" />
+    {% comment %} <meta property="og:image" content="{% static '경로' %}" /> {% endcomment %}
+    {% comment %} 카카오톡 공유를 위한 제목, 설명, 이미지 세팅 태그입니다 :D {% endcomment %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% comment %} axios 임포트 {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    {% comment %} 아이콘 사용을 위한 fontawesome 링크  {% endcomment %}
+    <title>Todo List</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}  
+    {% comment %} 여기에 테스트 {% endcomment %}
+    <button type="button" onclick="test()">테스트</button>
+    <script>const test = () => {
+            console.log("localStorage 아이템 생김")
+            window.localStorage.setItem('test', 'content')
+        }
+    </script>
+</body>
+</html>
