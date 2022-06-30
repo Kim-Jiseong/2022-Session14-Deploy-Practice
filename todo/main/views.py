@@ -24,8 +24,12 @@ def get_todo_notFinished(request):
 
 @csrf_exempt
 def get_todo_finished(request):
-    print('오류방지용')
-    # 여기부터 직접 작성하세요
+    todolist = list(Todo.objects.filter(done = True).order_by('-id').values()) #done == False인 todo를 찾고 id의 역순으로 정렬, json 변환 시 에러 피하기 위해 values() 사용 
+    print(todolist)
+    context = {'todolist': todolist}
+    print(context)
+    return HttpResponse(json.dumps(context, default=str)) #datetime은 그냥 넘기면 오류 발생하므로 string으로 변경
+
 
 @csrf_exempt
 def new_todo(request):
